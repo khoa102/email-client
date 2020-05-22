@@ -1,0 +1,8 @@
+3 ways to get out layout:
+    1. Procedural - coding
+    2.1 Declarative - manually edit the FXML
+    2.2 Declarative - Use external program to edit the FXML file
+        - Drag and drop elements
+        - Easy alignment
+        - Previsualize layout
+        - Use fluon scene builder

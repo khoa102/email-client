@@ -5,4 +5,5 @@ module email.client {
     requires javafx.web;
 
     opens com.cog;
+    opens com.cog.controller;
 }
