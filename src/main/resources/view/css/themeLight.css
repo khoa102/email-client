@@ -1,0 +1,64 @@
+*{
+    -fx-background-color: #33658A;
+}
+
+.big{
+    -fx-font-size: 16pt;
+    -fx-text-fill: #FFFFF2;
+}
+
+Button, Label, ChoiceBox, Slider, TextField, PasswordField {
+    -fx-text-fill: #FFFFF2;
+}
+
+Button {
+    -fx-background-color: #2F4858;
+}
+
+Button:hover {
+    -fx-background-color: #93C6D6;
+}
+
+ChoiceBox >* {
+    -fx-background-color: #2F4858;
+}
+
+Slider .axis {
+    -fx-tick-label-fill: #FFFFF2;
+}
+
+Slider .track {
+    -fx-background-color: #2F4858;
+}
+
+Slider .track:hover {
+    -fx-background-color: #93C6D6;
+}
+
+Slider .thumb {
+    -fx-background-color: #85939e;
+}
+
+TextField, PasswordField, TextField >*, PasswordField >*{
+    -fx-background-color: #2F4858;
+}
+
+.menu-bar, .menu-bar >* {
+    -fx-background-color: #2F4858;
+}
+
+.menu, .menu > * {
+    -fx-background-color: #2F4858;
+}
+
+.menu-bar > .container > .menu-button > .label {
+    -fx-text-fill: #FFFFF2;
+}
+
+.menu-item .label {
+    -fx-text-fill: #D1FAFF;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #FFFFF2;
+}

@@ -7,17 +7,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ViewFactory {
 
     private EmailManager emailManager;
+    private ArrayList<Stage> activeStages;
 
     public ViewFactory(EmailManager emailManager) {
         this.emailManager = emailManager;
+        activeStages = new ArrayList<>();
     }
 
     // View Options handling
-    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private ColorTheme colorTheme = ColorTheme.LIGHT;
     private FontSize fontSize = FontSize.MEDIUM;
 
     public ColorTheme getColorTheme() {
@@ -66,13 +69,29 @@ public class ViewFactory {
             return;
         }
         Scene scene = new Scene(parent);
+        updateSceneStyleSheets(scene);
         Stage stage = new Stage();
         stage.setTitle("Email Client");
         stage.setScene(scene);
         stage.show();
+        activeStages.add(stage);
     }
 
     public void closeStage(Stage stageToclose) {
         stageToclose.close();
+        activeStages.remove(stageToclose);
+    }
+
+    public void updateStyles() {
+        for (Stage stage: activeStages) {
+            Scene scene = stage.getScene();
+            updateSceneStyleSheets(scene);
+        }
+    }
+
+    private void updateSceneStyleSheets(Scene scene) {
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource(colorTheme.getCSSPath()).toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(fontSize.getCSSPath()).toExternalForm());
     }
 }

@@ -26,5 +26,9 @@ public class MainScreenController extends BaseController {
         viewFactory.showOptionsScreen();
     }
 
+    @FXML
+    void addAccountAction() {
+        viewFactory.showLoginScreen();
+    }
 }
 
